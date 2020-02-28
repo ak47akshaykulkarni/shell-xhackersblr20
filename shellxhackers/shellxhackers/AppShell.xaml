@@ -9,85 +9,27 @@
     FlyoutHeaderBehavior="CollapseOnScroll"
     mc:Ignorable="d">
     <!--  Shell Content  -->
-    <FlyoutItem Title="MainPage">
-        <Tab Title="MainPage">
-            <ShellContent ContentTemplate="{DataTemplate page:MainPage}" />
+    <FlyoutItem Title="animals" Route="animals">
+        <Tab Title="domestic" Route="domestic">
+            <ShellContent Title="cats" Route="cats">
+                <page:MainPage Title="cats" />
+            </ShellContent>
+            <ShellContent Title="dogs" Route="dogs">
+                <page:MainPage Title="dogs" />
+            </ShellContent>
         </Tab>
-        <Tab Title="MainPage">
-            <ShellContent ContentTemplate="{DataTemplate page:MainPage}" />
-        </Tab>
-        <Tab Title="MainPage">
-            <ShellContent ContentTemplate="{DataTemplate page:MainPage}" />
-        </Tab>
+        <ShellContent Title="monkeys" Route="monkeys">
+            <page:MainPage Title="monkeys" />
+        </ShellContent>
+        <ShellContent Title="elephants" Route="elephants">
+            <page:MainPage Title="monkeys" />
+        </ShellContent>
+        <ShellContent Title="bears" Route="bears">
+            <page:MainPage Title="monkeys" />
+        </ShellContent>
     </FlyoutItem>
-    <FlyoutItem Title="PageMain">
-        <ShellContent ContentTemplate="{DataTemplate page:MainPage}" />
-    </FlyoutItem>
-    <FlyoutItem Title="VeryMain">
-        <ShellContent ContentTemplate="{DataTemplate page:MainPage}" />
-    </FlyoutItem>
-
-    <MenuItem Clicked="MenuItem_Clicked" Text="Logout" />
-    <!--    -->
-
-    <!--  Part 7  -->
-    <Shell.FlyoutHeaderTemplate>
-        <DataTemplate>
-            <ContentView>
-                <StackLayout Padding="0,30" BackgroundColor="DarkCyan">
-                    <Label
-                        HorizontalOptions="Center"
-                        Text="Hakuna Matata"
-                        TextColor="White" />
-                </StackLayout>
-            </ContentView>
-        </DataTemplate>
-    </Shell.FlyoutHeaderTemplate>
-
-
-    <Shell.ItemTemplate>
-        <DataTemplate>
-            <StackLayout
-                Margin="0,10"
-                Padding="30,0,0,0"
-                HeightRequest="80"
-                Orientation="Horizontal"
-                Spacing="30">
-                <BoxView
-                    BackgroundColor="Chocolate"
-                    HeightRequest="25"
-                    Rotation="45"
-                    VerticalOptions="Center"
-                    WidthRequest="25" />
-                <Label
-                    FontAttributes="Bold"
-                    FontSize="Large"
-                    Text="{Binding Title}"
-                    VerticalOptions="Center" />
-            </StackLayout>
-        </DataTemplate>
-    </Shell.ItemTemplate>
-
-    <!--  Menu Item Template  -->
-    <Shell.MenuItemTemplate>
-        <DataTemplate>
-            <StackLayout
-                Padding="20,0,0,0"
-                HeightRequest="80"
-                Orientation="Horizontal"
-                Spacing="20"
-                VerticalOptions="EndAndExpand">
-                <BoxView
-                    BackgroundColor="MediumSeaGreen"
-                    HeightRequest="15"
-                    Rotation="45"
-                    VerticalOptions="Center"
-                    WidthRequest="15" />
-                <Label
-                    FontSize="Medium"
-                    Text="{Binding Text}"
-                    VerticalOptions="Center" />
-            </StackLayout>
-        </DataTemplate>
-    </Shell.MenuItemTemplate>
+    <ShellContent Title="About Page" Route="about">
+        <page:MainPage Title="Abouts page" />
+    </ShellContent>
+    <MenuItem Clicked="MenuItem_Clicked" Text="Menu Item" />
 </Shell>
