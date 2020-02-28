@@ -16,5 +16,10 @@ namespace shellxhackers
         {
             InitializeComponent();
         }
+
+        private async void MenuItem_Clicked(object sender, EventArgs e)
+        {
+            await DisplayAlert("Title", "Menu Item", "oh okay");
+        }
     }
 }
