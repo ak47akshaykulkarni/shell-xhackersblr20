@@ -10,8 +10,14 @@
     <StackLayout>
         <!--  Place new controls here  -->
         <Label
+            FontSize="Large"
             HorizontalOptions="Center"
-            Text="Welcome to Xamarin.Forms!"
+            Text="{Binding From}"
+            VerticalOptions="CenterAndExpand" />
+        <Label
+            FontSize="Large"
+            HorizontalOptions="Center"
+            Text="{Binding WhereTo}"
             VerticalOptions="CenterAndExpand" />
     </StackLayout>
 

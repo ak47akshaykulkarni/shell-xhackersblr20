@@ -7,6 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:page="clr-namespace:shellxhackers"
     FlyoutHeaderBehavior="CollapseOnScroll"
+    Navigated="Shell_Navigated"
     mc:Ignorable="d">
     <!--  Shell Content  -->
     <FlyoutItem Title="animals" Route="animals">

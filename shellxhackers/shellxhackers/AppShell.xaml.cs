@@ -21,28 +21,31 @@ namespace shellxhackers
         {
             var whereTo = await DisplayActionSheet("Where to?", "Nope", "oh okay", new string[] {"Cats", "Dogs", "about" });
 
+            string navTo;
             switch (whereTo)
             {
                 case "Cats":
-                    await Shell.Current.GoToAsync("//animals/domestic/cats");
+                    navTo = $"//animals/domestic/cats";
                     break;
                 case "Dogs":
-                    await Shell.Current.GoToAsync("//animals/domestic/dogs");
+                    navTo = $"//animals/domestic/dogs";
                     break;
                 case "about":
-                    await Shell.Current.GoToAsync("//about");
+                    navTo = $"//about";
                     break;
                 default:
-                    await Shell.Current.GoToAsync("//animals/bears");
+                    navTo = $"//animals/bears";
                     break;
             }
+            string para = $"?whereto={navTo}&from={Shell.Current.CurrentState.Location.OriginalString}";
+            await Shell.Current.GoToAsync($"{navTo}{para}");
 
         }
 
-        //private void Shell_Navigated(object sender, ShellNavigatedEventArgs e)
-        //{
-        //    if(Shell.Current is null) return;
-        //    Shell.Current.FlyoutIsPresented = false;
-        //}
+        private void Shell_Navigated(object sender, ShellNavigatedEventArgs e)
+        {
+            if (Shell.Current is null) return;
+            Shell.Current.FlyoutIsPresented = false;
+        }
     }
 }
