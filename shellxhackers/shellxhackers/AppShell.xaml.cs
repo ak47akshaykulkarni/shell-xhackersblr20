@@ -15,6 +15,8 @@ namespace shellxhackers
         public AppShell()
         {
             InitializeComponent();
+
+            Routing.RegisterRoute("dynamic", typeof(DynamicallyRegisterd));
         }
 
         private async void MenuItem_Clicked(object sender, EventArgs e)
@@ -37,7 +39,7 @@ namespace shellxhackers
                     navTo = $"//animals/bears";
                     break;
             }
-            string para = $"?whereto={navTo}&from={Shell.Current.CurrentState.Location.OriginalString}";
+            string para = $"/dynamic?from={Shell.Current.CurrentState.Location.OriginalString}";
             await Shell.Current.GoToAsync($"{navTo}{para}");
 
         }
